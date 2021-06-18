@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <title>Quản lý nhân viên</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center bg-dark">Quản lý nhân viên</h1>
+        <div class="form-group">
+            <p>Mã nhân viên</p>
+            <input class="form-control" id="maNhanVien">
+            <p class="text text-danger" id="error_required_maNhanVien"></p>
+            <p class="text text-danger" id='error_min_max_length_maNhanVien'></p>
+        </div>
+        <div class="form-group">
+            <p>Tên nhân viên</p>
+            <input class="form-control" id="tenNhanVien">
+            <p class="text text-danger" id="error_required_tenNhanVien"></p>
+            <p class="text text-danger" id="error_allLetter_tenNhanVien"></p>
+        </div>
+        <div class="form-group">
+            <p>Chức vụ</p>
+            <select id="chucVu" class="form-control">
+                <option value="1">Nhân viên</option>
+                <option value="2">Quản lý</option>
+                <option value="3">Giám đốc</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>Lương cơ bản</p>
+            <input class="form-control" id="luongCoBan">
+            <p class="text text-danger" id="error_required_luongCoBan"></p>
+            <p class="text text-danger" id="error_allNumber_luongCoBan"></p>
+            <p class="text text-danger" id="error_min_max_value_luongCoBan"></p>
+        </div>
+        <div class="form-group">
+            <p>Số giờ làm trong tháng</p>
+            <input class="form-control" id="soGioLam">
+            <p class="text text-danger" id="error_required_soGioLam"></p>
+            <p class="text text-danger" id="error_allNumber_soGioLam"></p>
+            <p class="text text-danger" id="error_min_max_value_soGioLam"></p>
+        </div>
+        <div class="form-group bg-light">
+            <button class="btn btn-outline-success" id="themNhanVien">Thêm nhân viên</button>
+            <button class="btn btn-outline-info" id="capNhatNhanVien">Cập nhật</button>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr class="bg-primary">
+                <th>Mã nhân viên</th>
+                <th>Tên nhân viên</th>
+                <th>Chức vụ</th>
+                <th>Lương cơ bản</th>
+                <th>Tổng lương</th>
+                <th>Giờ làm/tháng</th>
+                <th>Xếp loại nhân viên</th>
+            </tr>
+        </thead>
+        <tbody id="tblNhanVien"></tbody>
+    </table>
+
+
+
+
+
+
+
+
+    <!-- Optional Javascript -->
+    <!-- Jquery and bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./models/NhanVien.js"></script>
+    <script src="./models/Validation.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"
+      integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./controller/indexAjax.js"></script>
+    
+</body>
+</html>
